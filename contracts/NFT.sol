@@ -35,6 +35,8 @@ contract NFT is ERC721URIStorage {
         return _tokenIds.current();
     }
 
+//developer takes its fee from users paid amt
+
     function withdraw() public {
         require(msg.sender == owner);
         (bool success, ) = owner.call{value: address(this).balance}("");
